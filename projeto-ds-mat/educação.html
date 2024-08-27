@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação</title>
+    <link rel="stylesheet" href="./css/educacao.css">
+    <script src="./JavaScript/educacao.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Entenda suas Dívidas e os Juros</h1>
+        
+        <div class="topic" onclick="showInfo('tipos')">
+            <h2>Tipos de Juros</h2>
+            <p>Aprenda sobre os diferentes tipos de juros...</p>
+        </div>
+        
+        <div class="topic" onclick="showInfo('composicao')">
+            <h2>Como os Juros Compõem</h2>
+            <p>Veja como os juros impactam suas finanças...</p>
+        </div>
+        
+        <div class="topic" onclick="showInfo('estrategias')">
+            <h2>Estratégias para Reduzir Dívidas</h2>
+            <p>Crie um orçamento detalhado.</p>
+            <p>Priorize o pagamento de dívidas com juros mais altos.</p>
+            <p>Negocie taxas de juros mais baixas com seus credores.</p>
+        </div>
+        
+        <div class="topic" onclick="showInfo('recursos')">
+            <h2>Recursos Adicionais</h2>
+            <p>Explore mais materiais sobre educação financeira...</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
