@@ -1,29 +1,99 @@
-body {
+/* Reset básico */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    scroll-behavior: smooth;
+}
+
+/* Estilização da Navbar */
 .navbar {
-    background-color: rgb(0, 0, 102);
-    overflow: hidden;
-}
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 17px;
-}
-.navbar a:hover {
     background-color: #333;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     transition: background-color 0.3s ease;
 }
-.navbar a.active {
-    background-color: #4CAF50;
+
+.navbar.scrolled {
+    background-color: #222;
 }
-.navbar .logo {
-    font-weight: bold;
-    font-size: 20px;
-    padding-left: 20px;
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.logo {
+    height: 40px; /* Ajuste a altura conforme necessário */
+    width: auto; /* Mantém a proporção da logo */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente a logo ao passar o mouse */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 30px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(0, 0, 102);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: rgb(0, 0, 102);
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+/* Estilo das seções */
+.section {
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: #fff;
+}
+
+#home { background-color: #1abc9c; }
+#about { background-color: #3498db; }
+#services { background-color: #9b59b6; }
+#portfolio { background-color: #e74c3c; }
+#contact { background-color: #f39c12; }

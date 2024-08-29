@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Navbar</title>
     <link rel="stylesheet" href="./css/orcamento.css">
-    <title>Document</title>
+    <script src="./JavaScript/orcamento.js"></script>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#" class="logo">Logo</a>
-        <a href="#home">Início</a>
-        <a href="#services">Serviços</a>
-        <a href="#about">Sobre</a>
-        <a href="#contact">Contato</a>
-    </div>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="path/to/logo.png" alt="Logo" class="logo">
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sections to demonstrate scrolling -->
+    <section id="home" class="section">Home Section</section>
+    <section id="about" class="section">About Section</section>
+    <section id="services" class="section">Services Section</section>
+    <section id="portfolio" class="section">Portfolio Section</section>
+    <section id="contact" class="section">Contact Section</section>
 </body>
 </html>
