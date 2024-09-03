@@ -7,13 +7,14 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f8f9fa;
     scroll-behavior: smooth;
+    line-height: 1.6;
 }
 
-/* Estilização da Navbar */
+/* Estilização da Navbar (Mantida original) */
 .navbar {
-    background-color: #333;
+    background-color: #0CC0DF;
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -81,19 +82,141 @@ body {
     width: 100%;
 }
 
-/* Estilo das seções */
-.section {
-    height: 100vh;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    color: #fff;
+/* Estilização do Resumo Financeiro */
+.summary-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+    padding: 0 20px;
 }
 
-#home { background-color: #1abc9c; }
-#about { background-color: #3498db; }
-#services { background-color: #9b59b6; }
-#portfolio { background-color: #e74c3c; }
-#contact { background-color: #f39c12; }
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card.entrada {
+    border-left: 5px solid green;
+}
+
+.card.saida {
+    border-left: 5px solid red;
+}
+
+.card.total {
+    border-left: 5px solid darkred;
+}
+
+.card h3 {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilização do Formulário e Tabela */
+.form-section, .budget-section {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    grid-column: 1 / 3;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+#expense-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#expense-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+#expense-table td {
+    color: #555;
+}
+
+#expense-table td:nth-child(2) {
+    color: green;
+    font-weight: bold;
+}
+
+#expense-table td.saida {
+    color: red;
+}
+
+/* Botão de Remoção */
+.remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c82333;
+}

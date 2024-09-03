@@ -1,31 +1,55 @@
-// Adiciona o efeito de "scroll" à navbar
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+// Gerenciador de Despesas
+let totalEntrada = 0;
+let totalSaida = 0;
+
+document.getElementById('expense-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Obtém os valores do formulário
+    const description = document.getElementById('description').value;
+    const category = document.getElementById('category').value;
+    const amount = parseFloat(document.getElementById('amount').value);
+    const date = document.getElementById('date').value;
+
+    // Verifica se é entrada ou saída
+    if (amount >= 0) {
+        totalEntrada += amount;
     } else {
-        navbar.classList.remove('scrolled');
+        totalSaida += Math.abs(amount);
     }
-});
 
-// Destaca o link ativo na navbar ao rolar a página
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
+    // Atualiza a exibição dos valores
+    document.getElementById('total-entrada').innerText = `R$ ${totalEntrada.toFixed(2)}`;
+    document.getElementById('total-saida').innerText = `-R$ ${totalSaida.toFixed(2)}`;
+    document.getElementById('saldo-total').innerText = `R$ ${(totalEntrada - totalSaida).toFixed(2)}`;
 
-window.addEventListener('scroll', function() {
-    let current = '';
+    // Adiciona a transação à tabela
+    const table = document.getElementById('expense-table');
+    const row = table.insertRow();
+    row.insertCell(0).innerText = description;
+    row.insertCell(1).innerText = `R$ ${amount.toFixed(2)}`;
+    row.insertCell(2).innerText = date;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
+    // Botão de remover com funcionalidade
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'Remover';
+    removeButton.classList.add('remove-btn');
+    removeButton.addEventListener('click', function() {
+        // Atualizar o saldo total
+        if (amount >= 0) {
+            totalEntrada -= amount;
+        } else {
+            totalSaida -= Math.abs(amount);
         }
-    });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
+        document.getElementById('total-entrada').innerText = `R$ ${totalEntrada.toFixed(2)}`;
+        document.getElementById('total-saida').innerText = `-R$ ${totalSaida.toFixed(2)}`;
+        document.getElementById('saldo-total').innerText = `R$ ${(totalEntrada - totalSaida).toFixed(2)}`;
+
+        row.remove();
     });
+    row.insertCell(3).appendChild(removeButton);
+
+    // Limpa o formulário
+    document.getElementById('expense-form').reset();
 });

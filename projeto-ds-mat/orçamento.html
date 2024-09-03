@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Navbar</title>
+    <title>Gerenciador de Despesas Mensal</title>
     <link rel="stylesheet" href="./css/orcamento.css">
-    <script src="./JavaScript/orcamento.js"></script>
+    <script src="./JavaScript/orcamento.js" defer></script>
 </head>
 <body>
+    <!-- Navbar (Mantida original) -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="navbar-brand">
@@ -24,11 +25,65 @@
         </div>
     </nav>
 
-    <!-- Sections to demonstrate scrolling -->
-    <section id="home" class="section">Home Section</section>
-    <section id="about" class="section">About Section</section>
-    <section id="services" class="section">Services Section</section>
-    <section id="portfolio" class="section">Portfolio Section</section>
-    <section id="contact" class="section">Contact Section</section>
+    <!-- Resumo financeiro -->
+    <section class="summary-section">
+        <div class="card entrada">
+            <h3>Entradas</h3>
+            <p id="total-entrada">R$ 0,00</p>
+        </div>
+        <div class="card saida">
+            <h3>Saídas</h3>
+            <p id="total-saida">-R$ 0,00</p>
+        </div>
+        <div class="card total">
+            <h3>Total</h3>
+            <p id="saldo-total">R$ 0,00</p>
+        </div>
+    </section>
+
+    <!-- Formulário e Tabela de Transações -->
+    <div class="container">
+        <section class="form-section">
+            <h2>Nova Transação</h2>
+            <form id="expense-form">
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" required>
+
+                <label for="category">Categoria:</label>
+                <select id="category" required>
+                    <option value="Moradia">Moradia</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Saúde">Saúde</option>
+                </select>
+
+                <label for="amount">Valor:</label>
+                <input type="number" id="amount" required>
+
+                <label for="date">Data:</label>
+                <input type="date" id="date" required>
+
+                <button type="submit">Adicionar Transação</button>
+            </form>
+        </section>
+
+        <section class="budget-section">
+            <h2>Transações</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-table">
+                    <!-- As despesas serão inseridas aqui dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+    </div>
 </body>
 </html>
