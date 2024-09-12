@@ -11,7 +11,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="navbar-brand">
-                <a href="#" class="navbar-brand"><img src="./projeto-ds-mat/img/logo.png" alt="Logo" class="logo"></a>
+                <img src="./projeto-ds-mat/img/logo.png" alt="Logo" class="logo">
             </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="nav-link active">Página Inicial</a></li>
@@ -58,7 +58,10 @@
             </select>
 
             <label for="amount">Valor:</label>
-            <input type="number" id="amount" step="0.01" required>
+            <div class="amount-wrapper">
+                
+                <input type="number" id="amount" step="0.01" required>
+            </div>
 
             <label for="date">Data:</label>
             <input type="date" id="date" required>
