@@ -1,71 +1,82 @@
-// Gerenciador de Despesas
+document.addEventListener('DOMContentLoaded', () => {
+    let totalEntry = 0;
+    let totalExpense = 0;
 
-// Variáveis para armazenar os totais
-let totalEntrada = 0;
-let totalSaida = 0;
+    const expenseForm = document.getElementById('expense-form');
+    const expenseTableBody = document.getElementById('expense-table-body');
+    const totalEntryEl = document.getElementById('total-entry');
+    const totalExpenseEl = document.getElementById('total-expense');
+    const totalBalanceEl = document.getElementById('total-balance');
 
-// Adiciona um listener para o envio do formulário
-document.getElementById('expense-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    expenseForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-    // Obtém os valores do formulário
-    const description = document.getElementById('description').value;
-    const category = document.getElementById('category').value;
-    const amount = parseFloat(document.getElementById('amount').value);
-    const date = document.getElementById('date').value;
+        const description = document.getElementById('description').value;
+        const category = document.getElementById('category').value;
+        const amount = parseFloat(document.getElementById('amount').value);
+        const date = document.getElementById('date').value;
 
-    // Atualiza os totais de entrada e saída
-    if (amount >= 0) {
-        totalEntrada += amount;
-    } else {
-        totalSaida += Math.abs(amount);
+        // Determine if the amount is an entry or expense
+        let transactionType;
+        if (amount >= 0) {
+            totalEntry += amount;
+            transactionType = 'entry';
+        } else {
+            totalExpense += Math.abs(amount);
+            transactionType = 'expense';
+        }
+
+        updateDisplay();
+        addTransactionToTable(description, category, amount, date);
+
+        // Alert based on the transaction type
+        showTransactionAlert(transactionType, amount);
+
+        expenseForm.reset();
+    });
+
+    function updateDisplay() {
+        totalEntryEl.innerText = `R$ ${totalEntry.toFixed(2)}`;
+        totalExpenseEl.innerText = `-R$ ${totalExpense.toFixed(2)}`;
+        totalBalanceEl.innerText = `R$ ${(totalEntry - totalExpense).toFixed(2)}`;
     }
 
-    // Atualiza a exibição dos valores
-    updateDisplay();
+    function addTransactionToTable(description, category, amount, date) {
+        const row = expenseTableBody.insertRow();
 
-    // Adiciona a transação à tabela
-    addTransactionToTable(description, amount, date);
+        row.insertCell(0).innerText = description;
+        row.insertCell(1).innerText = category;
+        row.insertCell(2).innerText = `R$ ${amount.toFixed(2)}`;
+        row.insertCell(3).innerText = date;
 
-    // Limpa o formulário
-    document.getElementById('expense-form').reset();
-});
+        const removeButton = document.createElement('button');
+        removeButton.innerText = 'Remover';
+        removeButton.addEventListener('click', () => {
+            if (amount >= 0) {
+                totalEntry -= amount;
+            } else {
+                totalExpense -= Math.abs(amount);
+            }
 
-// Função para atualizar a exibição dos totais
-function updateDisplay() {
-    document.getElementById('total-entrada').innerText = `R$ ${totalEntrada.toFixed(2)}`;
-    document.getElementById('total-saida').innerText = `-R$ ${totalSaida.toFixed(2)}`;
-    document.getElementById('saldo-total').innerText = `R$ ${(totalEntrada - totalSaida).toFixed(2)}`;
-}
+            updateDisplay();
+            row.remove();
+        });
 
-// Função para adicionar uma transação à tabela
-function addTransactionToTable(description, amount, date) {
-    const table = document.getElementById('expense-table');
-    const row = table.insertRow();
+        row.insertCell(4).appendChild(removeButton);
+    }
 
-    // Adiciona as células à nova linha
-    row.insertCell(0).innerText = description;
-    row.insertCell(1).innerText = `R$ ${amount.toFixed(2)}`;
-    row.insertCell(2).innerText = date;
-
-    // Adiciona o botão de remover
-    const removeButton = document.createElement('button');
-    removeButton.innerText = 'Remover';
-    removeButton.classList.add('remove-btn');
-    removeButton.addEventListener('click', function() {
-        // Atualiza os totais ao remover uma transação
-        if (amount >= 0) {
-            totalEntrada -= amount;
-        } else {
-            totalSaida -= Math.abs(amount);
+    function showTransactionAlert(type, amount) {
+        let message;
+        switch (type) {
+            case 'entry':
+                message = `Entrada registrada: R$ ${amount.toFixed(2)}`;
+                break;
+            case 'expense':
+                message = `Despesa registrada: -R$ ${amount.toFixed(2)}`;
+                break;
+            default:
+                message = 'Transação registrada';
         }
-        
-        // Atualiza a exibição dos totais
-        updateDisplay();
-
-        // Remove a linha da tabela
-        row.remove();
-    });
-    
-    row.insertCell(3).appendChild(removeButton);
-}
+        alert(message);
+    }
+});

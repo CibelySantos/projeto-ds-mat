@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Despesas Mensal</title>
+    <title>Gerenciador de Despesas Mensal e Orçamento Pessoal</title>
     <link rel="stylesheet" href="./css/orcamento.css">
     <script src="./JavaScript/orcamento.js" defer></script>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="navbar-brand">
@@ -23,67 +22,68 @@
         </div>
     </nav>
 
-    <!-- Resumo financeiro -->
-    <section class="summary-section">
-        <div class="card entrada">
-            <h3>Entradas</h3>
-            <p id="total-entrada">R$ 0,00</p>
-        </div>
-        <div class="card saida">
-            <h3>Saídas</h3>
-            <p id="total-saida">-R$ 0,00</p>
-        </div>
-        <div class="card total">
-            <h3>Total</h3>
-            <p id="saldo-total">R$ 0,00</p>
+    <!-- Seção do Orçamento -->
+    <section class="budget-summary">
+        <h1>Gerenciador de Despesas Mensal e Orçamento Pessoal</h1>
+        <div class="summary-cards">
+            <div class="card entry">
+                <h3>Entradas</h3>
+                <p id="total-entry">R$ 0,00</p>
+            </div>
+            <div class="card expense">
+                <h3>Saídas</h3>
+                <p id="total-expense">-R$ 0,00</p>
+            </div>
+            <div class="card balance">
+                <h3>Saldo</h3>
+                <p id="total-balance">R$ 0,00</p>
+            </div>
         </div>
     </section>
 
-    <!-- Formulário e Tabela de Transações -->
-    <div class="container">
-        <!-- Formulário para adicionar nova transação -->
-        <section class="form-section">
-            <h2>Nova Transação</h2>
-            <form id="expense-form">
-                <label for="description">Descrição:</label>
-                <input type="text" id="description" required>
+    <!-- Formulário para Adicionar Despesas -->
+    <section class="expense-form">
+        <h2>Adicionar Despesa</h2>
+        <form id="expense-form">
+            <label for="description">Descrição:</label>
+            <input type="text" id="description" required>
 
-                <label for="category">Categoria:</label>
-                <select id="category" required>
-                    <option value="Moradia">Moradia</option>
-                    <option value="Alimentação">Alimentação</option>
-                    <option value="Transporte">Transporte</option>
-                    <option value="Lazer">Lazer</option>
-                    <option value="Saúde">Saúde</option>
-                </select>
+            <label for="category">Categoria:</label>
+            <select id="category" required>
+                <option value="Moradia">Moradia</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Lazer">Lazer</option>
+                <option value="Saúde">Saúde</option>
+            </select>
 
-                <label for="amount">Valor:</label>
-                <input type="number" id="amount" required>
+            <label for="amount">Valor:</label>
+            <input type="number" id="amount" step="0.01" required>
 
-                <label for="date">Data:</label>
-                <input type="date" id="date" required>
+            <label for="date">Data:</label>
+            <input type="date" id="date" required>
 
-                <button type="submit">Adicionar Transação</button>
-            </form>
-        </section>
+            <button type="submit">Adicionar Despesa</button>
+        </form>
+    </section>
 
-        <!-- Tabela de Transações -->
-        <section class="budget-section">
-            <h2>Transações</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descrição</th>
-                        <th>Valor</th>
-                        <th>Data</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody id="expense-table">
-                    <!-- As despesas serão inseridas aqui dinamicamente -->
-                </tbody>
-            </table>
-        </section>
-    </div>
+    <!-- Tabela de Despesas -->
+    <section class="expense-table">
+        <h2>Despesas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="expense-table-body">
+                <!-- As despesas serão inseridas aqui dinamicamente -->
+            </tbody>
+        </table>
+    </section>
 </body>
 </html>
