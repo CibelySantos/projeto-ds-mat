@@ -1,15 +1,24 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+
+body {
     background-color: #eaeaea;
+}
+
+/* Estilo para o main */
+main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 80vh; /* Para centralizar o conteúdo verticalmente */
 }
+
+
 .navbar {
     background-color: rgb(0, 0, 102);
     padding: 20px 0;
@@ -20,6 +29,7 @@ body{
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -28,6 +38,7 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+
 .navbar-brand {
     font-size: 24px;
     font-weight: bold;
@@ -36,21 +47,27 @@ body{
     letter-spacing: 2px;
     transition: color 0.3s ease;
 }
+
 .navbar-brand:hover {
     color: rgb(0, 0, 255);
 }
+
+
 .nav-links {
     list-style: none;
     display: flex;
 }
+
 .nav-link {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     font-size: 18px;
     margin-left: 30px;
     position: relative;
     transition: color 0.3s ease;
 }
+
+/* Efeito hover nos links da navbar */
 .nav-link::before {
     content: '';
     position: absolute;
@@ -62,27 +79,36 @@ body{
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
+
 .nav-link:hover {
     color: rgb(0, 0, 255);
 }
+
 .nav-link:hover::before {
     visibility: visible;
     width: 100%;
 }
-.containerdois{
+
+/* Estilo da seção de formulário ou conteúdo */
+.container2 {
     width: 600px !important;
     padding: 20px;
     border-radius: 8px;
     overflow: hidden;
+    border: 2px solid black !important;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adicionei uma sombra para destacar */
 }
 
-h1{
-    font-size: 24px; 
+
+h1 {
+    font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-label{
+
+label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
@@ -92,20 +118,29 @@ label{
 .input, select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 12px; 
-    border-radius: 6px; 
-    font-size: 16px; 
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 0.5px solid #ccc;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-button{
+
+button {
     width: 100%;
-    padding: 12px; 
+    padding: 12px;
     border: none;
-    background-color: #0d5b75; 
+    background-color: rgb(0, 0, 102);
     color: #ffffff;
-    font-size: 16px; 
-    border-radius: 6px; 
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px !important;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: rgb(0, 0, 150);
+    transform: scale(1.05);
 }
