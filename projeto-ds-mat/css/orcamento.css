@@ -75,8 +75,8 @@ body {
 }
 
 .nav-link:hover {
-    color: rgb(0, 0, 102);
-}
+    color: rgb(0, 0, 255);}
+
 
 .nav-link:hover::before {
     visibility: visible;
