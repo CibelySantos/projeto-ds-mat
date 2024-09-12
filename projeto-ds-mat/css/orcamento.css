@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +12,8 @@ body {
     line-height: 1.6;
 }
 
-/* Estilização da Navbar */
 .navbar {
-    background-color: #0d5b75;
+    background-color: rgb(0, 0, 102);
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -48,7 +47,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Navegação */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -84,7 +83,7 @@ body {
     width: 100%;
 }
 
-/* Seção do Orçamento */
+
 .budget-summary {
     padding: 20px;
     background-color: #ffffff;
@@ -138,7 +137,7 @@ body {
     color: #0277bd;
 }
 
-/* Formulário para Adicionar Despesas */
+
 .expense-form {
     background-color: #ffffff;
     padding: 20px;
@@ -180,7 +179,6 @@ body {
     background-color: #45a049;
 }
 
-/* Tabela de Despesas */
 .expense-table {
     background-color: #ffffff;
     padding: 20px;
@@ -224,7 +222,6 @@ body {
     background-color: #d32f2f;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .summary-cards {
         flex-direction: column;
