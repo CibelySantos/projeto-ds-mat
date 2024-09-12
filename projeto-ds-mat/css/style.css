@@ -1,12 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+body {
     background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
 }
 .navbar {
-    background-color: #333;
+    background-color: rgb(0, 0, 102);
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -14,17 +16,6 @@ body{
     width: 100%;
     z-index: 1000;
     transition: background-color 0.3s ease;
-}
-.logo {
-    height: 40px; 
-    width: auto; 
-    transition: transform 0.3s ease;
-}
-.logo:hover {
-    transform: scale(1.1);
-}
-.navbar.scrolled {
-    background-color: #222;
 }
 .container {
     width: 90%;
@@ -43,7 +34,7 @@ body{
     transition: color 0.3s ease;
 }
 .navbar-brand:hover {
-    color: rgb(0, 0, 102);
+    color: rgb(0, 0, 255);
 }
 .nav-links {
     list-style: none;
@@ -64,53 +55,58 @@ body{
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: rgb(0, 0, 102);
+    background-color: rgb(0, 0, 255);
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
 .nav-link:hover {
-    color: rgb(0, 0, 102);
+    color: rgb(0, 0, 255);
 }
 .nav-link:hover::before {
     visibility: visible;
     width: 100%;
 }
-h1{
+h1 {
     font-family: Arial, sans-serif;
     font-style: oblique;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin: 2%;
     color: rgb(0, 0, 102);
-
 }
-h3{
+h3 {
     font-size: larger;
     font-style: oblique;
     margin-bottom: 3%;
     color: rgb(0, 0, 102);
 }
-.cards{
+.cards {
     display: grid;
-    grid-template-columns: 2fr 2fr;
-    justify-content: center;
-    margin-left: 17%;
-    margin-right: 17%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10%;
 }
-.frases{
+.frases {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    margin-left: 17%;
-    margin-right: 17%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 10%;
     margin-top: 3%;
 }
-#intrd, #oquee, #frase1, #frase2, #frase3{
+article, blockquote {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: white;
     color: black;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.300);
-    padding: 2%;
-    margin: 1%;
+    padding: 20px;
+    text-align: justify;
+}
+#fotopessosasfrasedeimpacto {
+    display: block;
+    margin: 20px auto 0;
+    height: auto;
+    width: 80%;
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
