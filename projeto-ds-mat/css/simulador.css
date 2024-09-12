@@ -89,13 +89,13 @@ main {
     width: 100%;
 }
 
-/* Estilo da seção de formulário ou conteúdo */
+
 .container2 {
     width: 600px !important;
     padding: 20px;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid black !important;
+    border: 1px solid black !important;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adicionei uma sombra para destacar */
 }
@@ -113,6 +113,7 @@ label {
     margin-bottom: 8px;
     font-weight: 600;
     color: #0d5b75;
+    margin-top: 18px;
 }
 
 .input, select {
