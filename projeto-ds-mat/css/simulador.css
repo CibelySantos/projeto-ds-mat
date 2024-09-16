@@ -8,9 +8,10 @@
 
 body {
     background-color: #eaeaea;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Estilo para o main */
+
 main {
     display: flex;
     justify-content: center;
@@ -67,7 +68,6 @@ main {
     transition: color 0.3s ease;
 }
 
-/* Efeito hover nos links da navbar */
 .nav-link::before {
     content: '';
     position: absolute;
@@ -91,13 +91,14 @@ main {
 
 
 .container2 {
-    width: 600px !important;
+    width: 400px !important;
+    margin-top: 40px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid black !important;
+    border: 1px solid rgb(141, 140, 140) !important;
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adicionei uma sombra para destacar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
 
 
@@ -134,6 +135,7 @@ button {
     border: none;
     background-color: rgb(0, 0, 102);
     color: #ffffff;
+    margin-top: 30px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 6px !important;
