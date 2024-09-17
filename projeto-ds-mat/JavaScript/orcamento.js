@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay();
         addTransactionToTable(description, category, amount, date);
 
-        // Alert based on the transaction type
+        // Alert based on the transaction type using SweetAlert
         showTransactionAlert(transactionType, amount);
 
         expenseForm.reset();
@@ -67,16 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showTransactionAlert(type, amount) {
         let message;
+        let icon;
         switch (type) {
             case 'entry':
                 message = `Entrada registrada: R$ ${amount.toFixed(2)}`;
+                icon = 'success';
                 break;
             case 'expense':
                 message = `Despesa registrada: -R$ ${amount.toFixed(2)}`;
+                icon = 'error';
                 break;
             default:
                 message = 'Transação registrada';
+                icon = 'info';
         }
-        alert(message);
+        
+        // SweetAlert
+        Swal.fire({
+            title: 'Registro de Transação',
+            text: message,
+            icon: icon,
+            confirmButtonText: 'OK'
+        });
     }
 });
