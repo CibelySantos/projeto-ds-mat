@@ -1,58 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educação</title>
+    <title>Educação Financeira</title>
     <link rel="stylesheet" href="./css/educacao.css">
-    <script src="./JavaScript/educacao.js"></script>
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="containerx">
             <a href="#" class="navbar-brand"><img src="./img/logo.png" alt="Logo" class="logo"></a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="../index.html" class="nav-link active">Página Inicial</a></li>
+                <li><a href="../index.html" class="nav-link">Página Inicial</a></li>
                 <li><a href="./simulador.html" class="nav-link">Simulador</a></li>
                 <li><a href="./orçamento.html" class="nav-link">Orçamento</a></li>
-                <li><a href="./educação.html" class="nav-link">Educação</a></li>
+                <li><a href="./educacao.html" class="nav-link active">Educação</a></li>
             </ul>
         </div>
     </nav>
+
     <div class="container">
-        <h1>Entenda suas Dívidas e os Juros</h1>
+        <br><br><h1>Entenda suas Dívidas e os Juros</h1><br>
         
-        <div class="topic" onclick="showInfo('tipos')">
+        <div class="topic" data-topic="tipos">
             <h2>Tipos de Juros</h2>
             <p>Aprenda sobre os diferentes tipos de juros...</p>
         </div>
         
-        <div class="topic" onclick="showInfo('composicao')">
-            <h2>Como os Juros Compõem</h2>
-            <p>Veja como os juros impactam suas finanças...</p>
+        <div class="topic" data-topic="composicao">
+            <h2>Formulas</h2>
+            <p>Veja como funciona as fórmulas e seus cálculos...</p>
         </div>
         
-        <div class="topic" onclick="showInfo('estrategias')">
-            <h2>Estratégias para Reduzir Dívidas</h2>
-            <p>Crie um orçamento detalhado.</p>
-            <p>Priorize o pagamento de dívidas com juros mais altos.</p>
-            <p>Negocie taxas de juros mais baixas com seus credores.</p>
+        <div class="topic" data-topic="estrategias">
+            <h2>Economia</h2>
+            <p>Estratégias para Reduzir Dívidas</p>
         </div>
         
-        <div class="topic" onclick="showInfo('recursos')">
+        <div class="topic" data-topic="recursos">
             <h2>Recursos Adicionais</h2>
             <p>Explore mais materiais sobre educação financeira...</p>
         </div>
     </div>
 
     <!-- Modal -->
-    <div id="infoModal" class="modal">
+    <div id="infoModal" class="modal" role="dialog" aria-labelledby="modalText" aria-hidden="true">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="close" onclick="closeModal()" aria-label="Fechar">&times;</span>
             <p id="modalText"></p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./JavaScript/educacao.js"></script>
 </body>
 </html>
