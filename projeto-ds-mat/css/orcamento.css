@@ -1,3 +1,4 @@
+/* Reseta os padrões */
 * {
     margin: 0;
     padding: 0;
@@ -9,19 +10,22 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    /* Remova o padding-top adicional, já que a navbar não será mais fixa */
+    padding-top: 0;
 }
 
+/* Navbar não fixa */
 .navbar {
     background-color: rgb(0, 0, 102);
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
+    /* Remova o position fixado */
+    position: static; /* A navbar ficará no topo, mas não será fixa */
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease;
 }
 
+/* Estilos de navegação */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -79,7 +83,9 @@ body {
     width: 100%;
 }
 
+/* Restante do código permanece o mesmo */
 
+/* Orçamento */
 .budget-summary {
     padding: 20px;
     background-color: #ffffff;
@@ -91,6 +97,7 @@ body {
 
 .budget-summary h1 {
     margin-bottom: 20px;
+    color: #0277bd;
 }
 
 .summary-cards {
@@ -107,10 +114,16 @@ body {
     width: 30%;
     margin: 10px 0;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 .card h3 {
     margin-bottom: 10px;
+    color: #333;
 }
 
 .card p {
@@ -133,7 +146,7 @@ body {
     color: #0277bd;
 }
 
-
+/* Formulário de Despesas */
 .expense-form {
     background-color: #ffffff;
     padding: 20px;
@@ -146,11 +159,13 @@ body {
 
 .expense-form h2 {
     margin-bottom: 15px;
+    color: #0277bd;
 }
 
 .expense-form label {
     display: block;
     margin-bottom: 5px;
+    color: #333;
 }
 
 .expense-form input,
@@ -160,6 +175,13 @@ body {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.expense-form input:focus,
+.expense-form select:focus {
+    border-color: #0277bd;
+    outline: none;
 }
 
 .expense-form button {
@@ -170,12 +192,14 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
 .expense-form button:hover {
     background-color: #45a049;
 }
 
+/* Tabela de Despesas */
 .expense-table {
     background-color: #ffffff;
     padding: 20px;
@@ -188,6 +212,7 @@ body {
 
 .expense-table h2 {
     margin-bottom: 15px;
+    color: #0277bd;
 }
 
 .expense-table table {
@@ -204,6 +229,7 @@ body {
 
 .expense-table th {
     background-color: #f2f2f2;
+    color: #333;
 }
 
 .expense-table button {
@@ -214,20 +240,22 @@ body {
     padding: 6px 12px;
     cursor: pointer;
     font-size: 0.9em;
+    transition: background-color 0.3s ease;
 }
 
 .expense-table button:hover {
     background-color: #d32f2f;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .summary-cards {
         flex-direction: column;
+        align-items: center;
     }
 
     .card {
-        width: 100%;
-        margin: 10px 0;
+        width: 90%;
     }
 
     .expense-form,
