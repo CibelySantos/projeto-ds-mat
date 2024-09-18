@@ -9,7 +9,9 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="containerx">
-            <a href="#" class="navbar-brand"><img src="./img/logo.png" alt="Logo" class="logo"></a>
+            <a href="#" class="navbar-brand">
+                <img src="./img/Logo-Navbar-Novo.png" alt="Logo" class="logo" width="60" height="50">
+            </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="../index.html" class="nav-link">Página Inicial</a></li>
                 <li><a href="./simulador.html" class="nav-link">Simulador</a></li>
@@ -19,34 +21,34 @@
         </div>
     </nav>
 
-    <div class="container">
-        <br><br><h1>Entenda suas Dívidas e os Juros</h1><br>
+    <main class="container">
+        <h1>Entenda suas Dívidas e os Juros</h1>
         
-        <div class="topic" data-topic="tipos">
+        <section class="topic" data-topic="tipos">
             <h2>Tipos de Juros</h2>
-            <p>Aprenda sobre os diferentes tipos de juros...</p>
-        </div>
+            <p>Aprenda sobre os diferentes tipos de juros e como eles afetam suas finanças.</p>
+        </section>
         
-        <div class="topic" data-topic="composicao">
+        <section class="topic" data-topic="composicao">
             <h2>Formulas</h2>
-            <p>Veja como funciona as fórmulas e seus cálculos...</p>
-        </div>
+            <p>Veja como funcionam as fórmulas e seus cálculos para uma gestão financeira mais eficiente.</p>
+        </section>
         
-        <div class="topic" data-topic="estrategias">
+        <section class="topic" data-topic="estrategias">
             <h2>Economia</h2>
-            <p>Estratégias para Reduzir Dívidas</p>
-        </div>
+            <p>Estratégias para Reduzir Dívidas e economizar dinheiro.</p>
+        </section>
         
-        <div class="topic" data-topic="recursos">
+        <section class="topic" data-topic="recursos">
             <h2>Recursos Adicionais</h2>
-            <p>Explore mais materiais sobre educação financeira...</p>
-        </div>
-    </div>
+            <p>Explore materiais e ferramentas para aprimorar seu conhecimento em educação financeira.</p>
+        </section>
+    </main>
 
     <!-- Modal -->
     <div id="infoModal" class="modal" role="dialog" aria-labelledby="modalText" aria-hidden="true">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()" aria-label="Fechar">&times;</span>
+            <button class="close" onclick="closeModal()" aria-label="Fechar">&times;</button>
             <p id="modalText"></p>
         </div>
     </div>
