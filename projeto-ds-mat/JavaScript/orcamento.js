@@ -36,8 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateDisplay() {
+        // Display total entry, total expense with proper signs
         totalEntryEl.innerText = `R$ ${totalEntry.toFixed(2)}`;
-        totalExpenseEl.innerText = `-R$ ${totalExpense.toFixed(2)}`;
+        totalExpenseEl.innerText = `R$ ${totalExpense === 0 ? '0.00' : `-${totalExpense.toFixed(2)}`}`;
         totalBalanceEl.innerText = `R$ ${(totalEntry - totalExpense).toFixed(2)}`;
     }
 
@@ -68,18 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function showTransactionAlert(type, amount) {
         let message;
         let icon;
-        switch (type) {
-            case 'entry':
-                message = `Entrada registrada: R$ ${amount.toFixed(2)}`;
-                icon = 'success';
-                break;
-            case 'expense':
-                message = `Despesa registrada: -R$ ${amount.toFixed(2)}`;
-                icon = 'error';
-                break;
-            default:
-                message = 'Transação registrada';
-                icon = 'info';
+        if (type === 'entry') {
+            message = `Entrada registrada: R$ ${amount.toFixed(2)}`;
+            icon = 'success';
+        } else if (type === 'expense') {
+            message = `Despesa registrada: R$ -${amount.toFixed(2)}`;
+            icon = 'error';
+        } else {
+            message = 'Transação registrada';
+            icon = 'info';
         }
         
         // SweetAlert
