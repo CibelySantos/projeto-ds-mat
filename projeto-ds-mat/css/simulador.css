@@ -14,10 +14,7 @@ body {
 
 main {
     display: flex;
-     /* justify-content: center; */
     align-items: center;
-    /* justify-content:left; */
-    /* margin-left: 250px; */
     min-height: 80vh; 
 }
 
@@ -155,8 +152,8 @@ button:hover {
 .container3{
     display: flex;
     justify-content:right !important;
-    margin-right: 270px;
-    margin-top: -497px;
+    margin-right: 240px;
+    margin-top: -455px;
 }
 
 .imgsimulador{
