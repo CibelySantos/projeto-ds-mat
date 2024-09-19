@@ -1,17 +1,8 @@
 
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    padding-top: 0;
 }
 
 
@@ -21,26 +12,27 @@ main {
     min-height: 80vh; 
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    padding-top: 0;
+}
+
 
 .navbar {
     background-color: rgb(0, 0, 102);
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
+    position: static;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .navbar-brand {
     font-size: 24px;
@@ -49,27 +41,37 @@ main {
     text-decoration: none;
     letter-spacing: 2px;
     transition: color 0.3s ease;
+    margin-right: 30px; 
 }
 
 .navbar-brand:hover {
-    color: rgb(0, 0, 255);
+    color: rgb(0, 0, 255) !important;
 }
 
+
+.navbar-content {
+    display: flex;
+    justify-content: center; 
+    flex-grow: 1; 
+}
 
 .nav-links {
     list-style: none;
     display: flex;
+    color: white;
+    justify-content: center; 
 }
 
 .nav-link {
-    color: #fff !important;
-    font-family: 'Arial', sans-serif;
+    color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 18px !important;
     margin-left: 30px;
     position: relative;
     transition: color 0.3s ease;
-    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    min-height: 4vh; 
 }
 
 .nav-link::before {
@@ -85,7 +87,7 @@ main {
 }
 
 .nav-link:hover {
-    color: rgb(0, 0, 255);
+    color: rgb(0, 0, 255) !important;
 }
 
 .nav-link:hover::before {
@@ -105,7 +107,7 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
     justify-content: left;
     align-items: center;
-    margin-left: 270px;
+    margin-left: 290px;
 }
 
 
@@ -151,18 +153,130 @@ button {
 }
 
 button:hover {
-    background-color: rgb(0, 0, 150);
+    background-color: rgb(0, 0, 150) !;
     transform: scale(1.05);
 }
 
 .container3{
     display: flex;
     justify-content:right !important;
-    margin-right: 240px;
-    margin-top: -455px;
+    margin-right: 290px;
+    margin-top: -488px;
 }
 
 .imgsimulador{
     border-radius: 18px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
+
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    .container3 {
+        display: none;
+    }
+
+    .imgsimulador {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .container2 {
+        width: 80%;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container2 {
+        width: 90%;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container3 {
+        display: none;
+    }
+
+    .imgsimulador {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        height: 40px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .container2 {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .container3 {
+       display: none;
+    }
+
+    .imgsimulador {
+       display: none;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    .navbar-brand img {
+        width: 40px;
+        height: 35px;
+    }
+} 
