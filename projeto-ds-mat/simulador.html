@@ -19,7 +19,8 @@
     <header>
         <nav class="navbar" id="navbar">
             <div class="container">
-                <a href="../index.html" class="navbar-brand"><img src="./img/Logo-Navbar-Novo.png" alt="Logo" class="logo" width="60" height="50"></a>
+                <a href="../index.html" class="navbar-brand"><img src="./img/Logo-Navbar-Novo.png" alt="Logo"
+                        class="logo" width="60" height="50"></a>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="../index.html" class="nav-link active">Página Inicial</a></li>
                     <li><a href="../projeto-ds-mat/simulador.html" class="nav-link">Simulador</a></li>
@@ -38,20 +39,20 @@
                 <option value="automotivo">Automotivo</option>
                 <option value="pessoal">Pessoal</option>
             </select>
-    
+
             <label for="valor">Valor Total (R$):</label>
             <input type="number" id="valor" value="10000" min="0" step="1000">
-    
+
             <label for="prazo">Prazo (Meses):</label>
             <input type="range" id="prazo" value="60" min="1" max="360"
                 oninput="document.getElementById('prazo-value').textContent = this.value">
             <span id="prazo-value">60</span> meses
-    
+
             <label for="juros">Taxa de Juros (% a.m.):</label>
             <input type="number" id="juros" value="10" step="0.1">
-    
+
             <button onclick="calcular()">Calcular</button>
-    
+
             <div class="results" id="resultados">
                 <!-- Resultados aparecerão aqui -->
             </div>
@@ -59,7 +60,7 @@
     </main>
 
     <div class="container3">
-        <img class="imgsimulador"  src="./img/imagem do simulador.png" alt="" width="390" height="440">
+        <img class="imgsimulador" src="./img/imagem do simulador.png" alt="" width="390" height="440">
 
 
 </body>

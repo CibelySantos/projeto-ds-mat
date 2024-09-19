@@ -10,22 +10,19 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    /* Remova o padding-top adicional, já que a navbar não será mais fixa */
     padding-top: 0;
 }
 
-/* Navbar não fixa */
+/* Navbar */
 .navbar {
     background-color: rgb(0, 0, 102);
     padding: 20px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Remova o position fixado */
-    position: static; /* A navbar ficará no topo, mas não será fixa */
+    position: static;
     width: 100%;
     z-index: 1000;
 }
 
-/* Estilos de navegação */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -82,8 +79,6 @@ body {
     visibility: visible;
     width: 100%;
 }
-
-/* Restante do código permanece o mesmo */
 
 /* Orçamento */
 .budget-summary {
@@ -271,5 +266,20 @@ body {
 
     .expense-table button {
         padding: 4px 8px;
+    }
+
+    .navbar-brand img {
+        width: 50px;
+        height: 40px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav-link {
+        margin: 10px 0;
     }
 }
