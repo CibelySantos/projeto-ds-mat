@@ -147,14 +147,21 @@ blockquote p {
     .navbar-brand {
         font-size: 20px;
     }
-
     .nav-link {
         font-size: 16px;
         margin-left: 15px;
     }
-
-    .cards,
-    .frases {
+    .cards, .frases {
         padding: 0 5%;
+    }
+    #div_img {
+        margin: 2% 5%;
+        padding: 15px;
+    }
+}
+@media (max-width: 576px) {
+    #div_img {
+        margin: 2% 3%;
+        padding: 10px;
     }
 }
